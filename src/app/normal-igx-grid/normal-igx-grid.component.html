@@ -1,9 +1,4 @@
-<igx-grid
-  #myGrid
-  [data]="gridData"
-  [autoGenerate]="false"
-  [allowFiltering]="true"
->
+<igx-grid #myGrid [data]="gridData" [autoGenerate]="false">
   <igx-column field="first" header="First Name" [sortable]="true"></igx-column>
   <igx-column field="last" header="Last Name" [sortable]="true"></igx-column>
 </igx-grid>

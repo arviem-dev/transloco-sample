@@ -3,7 +3,8 @@ import {
   OnInit,
   ViewChild,
   AfterViewInit,
-  OnDestroy
+  OnDestroy,
+  ChangeDetectorRef
 } from "@angular/core";
 import { gridDummyData, initialSortingExpression } from "../grid-dummy-data";
 import { IgxGridComponent } from "igniteui-angular";
@@ -18,11 +19,14 @@ import { TranslocoService } from "@ngneat/transloco";
 })
 export class TranslocoIgxGridComponent
   implements OnInit, AfterViewInit, OnDestroy {
-  @ViewChild("myGrid", { static: false }) public grid: IgxGridComponent;
+  @ViewChild("myGrid", { static: false }) private grid: IgxGridComponent;
   private readonly destroy$ = new Subject<boolean>();
   gridData = gridDummyData;
 
-  constructor(private readonly translocoService: TranslocoService) {}
+  constructor(
+    private readonly translocoService: TranslocoService,
+    private readonly cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.translocoService.events$
@@ -39,6 +43,7 @@ export class TranslocoIgxGridComponent
   ngAfterViewInit(): void {
     if (this.grid) {
       this.grid.sortingExpressions = initialSortingExpression;
+      this.cdr.detectChanges();
     }
   }
 
