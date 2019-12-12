@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~igniteui-angular/lib/core/styles/themes/index";
+
+html,
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+$primary: #5e698a !default;
+$secondary: #ff6b58 !default;
+
+$app-palette: igx-palette($primary, $secondary);
+
+@include igx-core();
+@include igx-theme($app-palette);
+
+$light-navbar-drop-down-input-group-theme: igx-input-group-theme(
+  $disabled-border-color: white,
+  $hover-bottom-line-color: white,
+  $focused-bottom-line-color: white,
+  $focused-secondary-color: white,
+  $focused-border-color: white,
+  $box-disabled-background: white,
+  $focused-text-color: white,
+  $filled-text-color: white,
+  $idle-text-color: white
+);
+
+@include igx-input-group($light-navbar-drop-down-input-group-theme);

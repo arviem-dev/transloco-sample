@@ -1,0 +1,14 @@
+<ng-container *transloco="let t">
+  <igx-grid #myGrid [data]="gridData" [autoGenerate]="false">
+    <igx-column
+      field="first"
+      [header]="t('first_name')"
+      [sortable]="true"
+    ></igx-column>
+    <igx-column
+      field="last"
+      [header]="t('last_name')"
+      [sortable]="true"
+    ></igx-column>
+  </igx-grid>
+</ng-container>

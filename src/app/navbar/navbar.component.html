@@ -1,0 +1,16 @@
+<igx-navbar title="Grid issue" class="navbar" *transloco="let t">
+  <a routerLink="/normal-grid">Grid without transloco</a>
+  <a routerLink="/transloco-grid">Grid with transloco</a>
+
+  <igx-select [value]="language">
+    <label igxLabel>Languages</label>
+    <igx-select-item-group>
+      <igx-select-item (click)="changingLanguage($event)" value="en"
+        >EN</igx-select-item
+      >
+      <igx-select-item (click)="changingLanguage($event)" value="es"
+        >ES</igx-select-item
+      >
+    </igx-select-item-group>
+  </igx-select>
+</igx-navbar>
