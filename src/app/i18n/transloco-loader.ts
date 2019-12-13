@@ -1,12 +1,8 @@
-import { HttpClient } from "@angular/common/http";
-import {
-  Translation,
-  TRANSLOCO_LOADER,
-  TranslocoLoader
-} from "@ngneat/transloco";
-import { Injectable } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+import { TRANSLOCO_LOADER, TranslocoLoader } from '@ngneat/transloco';
+import { Injectable } from '@angular/core';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class HttpLoader implements TranslocoLoader {
   constructor(private http: HttpClient) {}
 
